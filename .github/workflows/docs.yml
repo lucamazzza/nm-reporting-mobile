@@ -18,5 +18,4 @@ jobs:
         sudo apt-get install -y pandoc texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
 
     - name: Build Documentation
-      run: |
-        bash /docs/pdf.sh
+      run: bash ./docs/pdf.sh
