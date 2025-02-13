@@ -2,7 +2,6 @@
 mkdir -p build
 
 pandoc \
-    --pdf-engine=xelatex \
     --highlight-style tango \
     --toc -N \
     -o docs/build/out.pdf \
