@@ -19,5 +19,4 @@ jobs:
 
     - name: Build Documentation
       run: |
-        chmod +x ./docs/pdf.sh
-        ./docs/pdf.sh
+        bash /docs/pdf.sh
