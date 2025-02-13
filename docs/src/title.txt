@@ -1,0 +1,7 @@
+---
+title: Near Misses Reporting & Good Solutions
+subtitle: CS4704, SUPSI-DTI/Virginia Tech
+author: Luca Mazza
+include-before:
+- '`\newpage{}`{=latex}'
+---
