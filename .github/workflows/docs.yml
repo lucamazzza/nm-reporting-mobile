@@ -1,14 +1,21 @@
-name: Compile Documentation
+name: Build Documentation
 on:
-  workflow_dispatch:
+  push:
+    paths:
+      - 'docs/**'
 
 jobs:
-  bash-script:
+  compile-docs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Run Bash script
-        run: bash docs/pdf.sh
+    - name: Set up Pandoc
+      run: sudo apt-get install -y pandoc
+
+    - name: Build Documentation
+      run: |
+        chmod +x ./docs/pdf.sh
+        ./docs/pdf.sh
