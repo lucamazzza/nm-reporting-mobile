@@ -35,3 +35,13 @@ jobs:
         project-folder: ${{ needs.vars.outputs.projectFolder }}
         build-config: 'Release'
         build-version: ${{ needs.vars.outputs.buildVersion }}
+  build-android:   
+      needs: vars 
+      uses: ./.github/workflows/build-android.yml
+      with:
+        dotnet-version: ${{ needs.vars.outputs.dotnetVersion }}
+        dotnet-version-target: ${{ needs.vars.outputs.dotnetVersionTargets }}
+        project-file: ${{ needs.vars.outputs.csprojToBuild }}
+        project-folder: ${{ needs.vars.outputs.projectFolder }}
+        build-config: 'Release'
+        build-version: ${{ needs.vars.outputs.buildVersion }}
