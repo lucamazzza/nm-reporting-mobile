@@ -1,0 +1,43 @@
+name: iOS Build
+on:
+  workflow_call:
+    inputs:
+      dotnet-version:
+        required: true
+        type: string
+      dotnet-vertsion-target:
+        required: true
+        type: string
+      xcode-version:
+        required: true
+        type: string
+      project-folder:
+        required: true
+        type: string
+      build-config:
+        required: true
+        type: string
+      build-version:
+        required: true
+        type: string
+jobs:
+  build-ios:
+    runs-on: macos-15
+    name: iOS Build
+    steps:
+      - uses: maxim-lobanov/setup-xcode@v1
+        name: Set Xcode Version
+        with:
+          xcode-version: ${{ inputs.xcode-version }}
+      - name: Setup .NET ${{ inputs.dotnet-version }}
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: ${{ inputs.dotnet-version }}
+      - uses: actions/checkout@v3
+        name: Checkout the code
+      - name: Install MAUI Workload
+        run: dotnet workload install maui --ignore-failed-sources
+      - name: Restore Dependencies
+        run: dotnet restore ${{ inputs.project-file }}
+      - name: Build .NET Maui
+        run: dotnet build -f net9.0-ios
