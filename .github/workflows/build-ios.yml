@@ -40,4 +40,4 @@ jobs:
       - name: Restore Dependencies
         run: dotnet restore ${{ inputs.project-file }}
       - name: Build .NET Maui
-        run: dotnet build -f net9.0-ios
+        run: dotnet build ${{inputs.project-file}} -c ${{ inputs.build-config }} -f:${{ inputs.dotnet-version-target }}-ios /p:ArchiveOnBuild=true /p:EnableAssemblyILStripping=false
