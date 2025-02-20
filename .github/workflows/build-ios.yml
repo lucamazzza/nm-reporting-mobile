@@ -5,7 +5,7 @@ on:
       dotnet-version:
         required: true
         type: string
-      dotnet-vertsion-targets:
+      dotnet-version-targets:
         required: true
         type: string
       xcode-version:
