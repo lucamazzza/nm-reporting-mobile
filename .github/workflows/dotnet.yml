@@ -23,7 +23,7 @@ jobs:
       csprojToBuild: ${{ env.CSPROJ_TO_BUILD }}
       projectFolder: ${{ env.PROJECT_FOLDER }}
     steps:
-      - run: echo "Exposing env vars, because they can't be passed to nested workflows.
+      - run: echo "Exposing env vars, because they can't be passed to nested workflows."
   build-ios:   
       needs: vars 
       uses: ./.github/workflows/build-ios.yml
