@@ -29,7 +29,7 @@ jobs:
       uses: ./.github/workflows/build-ios.yml
       with:
         dotnet-version: ${{ needs.vars.outputs.dotnetVersion }}
-        dotnet-version-target: ${{ needs.vars.outputs.dotnetVersionTargets }}
+        dotnet-version-targets: ${{ needs.vars.outputs.dotnetVersionTargets }}
         xcode-version: ${{ needs.vars.outputs.xcodeVersion }}
         project-file: ${{ needs.vars.outputs.csprojToBuild }}
         project-folder: ${{ needs.vars.outputs.projectFolder }}
@@ -40,7 +40,7 @@ jobs:
       uses: ./.github/workflows/build-android.yml
       with:
         dotnet-version: ${{ needs.vars.outputs.dotnetVersion }}
-        dotnet-version-target: ${{ needs.vars.outputs.dotnetVersionTargets }}
+        dotnet-version-targets: ${{ needs.vars.outputs.dotnetVersionTargets }}
         project-file: ${{ needs.vars.outputs.csprojToBuild }}
         project-folder: ${{ needs.vars.outputs.projectFolder }}
         build-config: 'Release'
