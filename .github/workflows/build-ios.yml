@@ -11,6 +11,9 @@ on:
       xcode-version:
         required: true
         type: string
+      project-file:
+        required: true
+        type: string
       project-folder:
         required: true
         type: string
