@@ -10,8 +10,8 @@ env:
   DOTNET_VERSION: 9.0.x
   XCODE_VERSION: 16.2
   DOTNET_VERSION_TARGETS: net9.0
-  CSPROJ_TO_BUILD: "src"
-  PROJECT_FOLDER: "NMReporting"
+  CSPROJ_TO_BUILD: "src/NMReporting.csproj"
+  PROJECT_FOLDER: "src"
 jobs:
   vars:
     runs-on: ubuntu-22.04
